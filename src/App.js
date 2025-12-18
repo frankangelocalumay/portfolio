@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import "@fontsource/inter";
 import './App.css';  // Make sure you include the custom CSS for the animation.
 import AboutMe from './components/AboutMe';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';  // Changed from Contact
 import Contact from './components/Contact'; // Added Contact import
@@ -16,7 +17,7 @@ const App = () => {
   // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -75,7 +76,7 @@ const App = () => {
             ? 'font-bold bg-[#F2F4CB] text-[#110B11]' 
             : 'hover:bg-[#F2F4CB] hover:text-[#110B11] hover:font-bold text-[#F2F4CB]'
           }
-          ${onClick ? 'block w-full px-4 py-2' : 'text-sm md:text-base px-3 py-1 rounded-full'}
+          ${onClick ? 'block w-full px-4 py-2' : 'text-sm md:text-sm px-2 py-1 rounded-full whitespace-nowrap'}
         `}
       >
         {children}
@@ -137,9 +138,10 @@ const App = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex justify-center items-center space-x-8 bg-[#B7990D] rounded-[20px] px-6 py-2 w-fit mx-auto">
+            <div className="hidden md:flex justify-center items-center space-x-4 bg-[#B7990D] rounded-[20px] px-4 py-2 w-fit mx-auto">
               <NavLink href="#home">Home</NavLink>
               <NavLink href="#about">About Me</NavLink>
+              <NavLink href="#experience">Experience</NavLink>
               <NavLink href="#projects">Projects</NavLink>
               <NavLink href="#skills">Skills</NavLink>
               <NavLink href="#contact">Contact</NavLink>
@@ -194,6 +196,13 @@ const App = () => {
                 className="block px-4 py-2 text-[#F2F4CB] hover:bg-[#B7990D]/10 transition-colors"
               >
                 About Me
+              </NavLink>
+              <NavLink 
+                href="#experience"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-2 text-[#F2F4CB] hover:bg-[#B7990D]/10 transition-colors"
+              >
+                Experience
               </NavLink>
               <NavLink 
                 href="#projects"
@@ -363,6 +372,7 @@ const App = () => {
 
       {/* Other Components */}
       <AboutMe />
+      <Experience />
       <Projects />
       <Skills />
       <Contact />
