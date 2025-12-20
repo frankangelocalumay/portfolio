@@ -6,46 +6,61 @@ const Experience = () => {
 
   const experience = [
     {
-      company: "Company Name",
-      position: "OJT / Intern Position",
-      period: "Start Date - End Date",
-      description: "Brief description of the internship experience and responsibilities.",
+      company: "Allied Care Experts Medical Center Valenzuela",
+      position: "OJT / IT Intern",
+      period: "July 2025 - December 2025",
+      description: "Completed an on-the-job training internship in a hospital environment, assisting in IT support, system-based record verification, hardware maintenance, and administrative data processing to support daily hospital operations.",
       activities: [
         {
           category: "IT Support",
           photos: [
             { 
               src: process.env.PUBLIC_URL + "/images/experience/it-support-1.jpg", 
-              caption: "IT Support activity description" 
+              caption: "Tagging and inventory of computer peripherals per department using hospital records" 
+            },
+            { 
+              src: process.env.PUBLIC_URL + "/images/experience/it-support-2.jpg", 
+              caption: "Responding to department requests for printer repair, ink refill, and basic PC troubleshooting" 
             }
           ]
         },
         {
-          category: "Data Encoding",
+          category: "Data Encoding & System Verification",
           photos: [
             { 
               src: process.env.PUBLIC_URL + "/images/experience/data-encoding-1.jpg", 
-              caption: "Data encoding task description" 
+              caption: "Verifying PhilHealth claims and encoding records using PhilHealth Information System and spreadsheets" 
+            },
+            { 
+              src: process.env.PUBLIC_URL + "/images/experience/data-encoding-2.jpg", 
+              caption: "Manual encoding of PhilHealth data when records are missing from the system database" 
             }
           ]
         },
         {
-          category: "Hardware Debugging",
+          category: "Hardware & Network Maintenance",
           photos: [
             { 
               src: process.env.PUBLIC_URL + "/images/experience/hardware-1.jpg", 
-              caption: "Printer troubleshooting" 
+              caption: "Printer maintenance including ink refilling, cleaning, and functionality testing" 
             },
             { 
               src: process.env.PUBLIC_URL + "/images/experience/hardware-2.jpg", 
-              caption: "PC problem diagnosis" 
+              caption: "LAN cable testing, re-crimping, and basic network cable organization" 
             }
           ]
         }
       ],
-      technologies: ["Technology 1", "Technology 2"]
+      technologies: [
+        "Hospital Information System (HIS)",
+        "PhilHealth Information System",
+        "Microsoft Excel / Spreadsheets",
+        "Printer & Peripheral Hardware",
+        "LAN Cabling Tools"
+      ]
     }
   ];
+  
 
   return (
     <section id="experience" className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24">
@@ -158,30 +173,42 @@ const Experience = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#110B11]/95 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#110B11]/95 p-4 sm:p-6"
           onClick={() => setSelectedImage(null)}
         >
           <motion.div
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.8 }}
-            className="relative max-w-4xl max-h-[90vh]"
+            className="relative w-full max-w-5xl max-h-[95vh] flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.caption}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            />
-            <p className="text-[#F2F4CB] text-center mt-4 text-lg">{selectedImage.caption}</p>
+            {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-[#B7990D] text-[#110B11] rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#B7990D]/90 transition-colors"
+              className="absolute -top-2 -right-2 sm:top-4 sm:right-4 bg-[#B7990D] text-[#110B11] rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center hover:bg-[#B7990D]/90 transition-colors z-10 shadow-lg"
+              aria-label="Close"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
+
+            {/* Image Container */}
+            <div className="w-full flex-1 flex items-center justify-center mb-4 overflow-hidden">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.caption}
+                className="max-w-full max-h-[75vh] sm:max-h-[80vh] object-contain rounded-lg shadow-2xl"
+              />
+            </div>
+
+            {/* Caption */}
+            <div className="w-full bg-[#110B11]/80 rounded-lg p-4 sm:p-6 border border-[#B7990D]/20">
+              <p className="text-[#F2F4CB] text-center text-sm sm:text-base md:text-lg leading-relaxed">
+                {selectedImage.caption}
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       )}

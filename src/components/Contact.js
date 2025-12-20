@@ -225,6 +225,11 @@ const Contact = () => {
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                   </a>
+                  <a href="https://www.linkedin.com/in/frank-angelo-sarto-calumay-708b9b369/" target="_blank" rel="noopener noreferrer" className="bg-[#F2F4CB] p-3 rounded-full hover:bg-[#F2F4CB]/90 transition-colors">
+                    <svg className="w-6 h-6 text-[#110B11]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.32h4.36V24H.32V8.32zM8.12 8.32h4.18v2.13h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.68V24h-4.36v-7.32c0-1.75-.03-4-2.44-4-2.44 0-2.81 1.9-2.81 3.86V24H8.12V8.32z"/>
+                    </svg>
+                  </a>
                 </div>
               </div>        
             </motion.div>

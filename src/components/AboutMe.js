@@ -20,22 +20,11 @@ const AboutMe = () => {
             
             <div className="text-gray-400 space-y-6">
               <p className="text-lg">
-                Hi there, I'm Frank Calumay.
-              </p>
-              
-              <p className="text-lg">
-                I'm a problem solver who loves bringing ideas to life through coding. 
-                I call my approach iterative prompting—I come up with the concepts, and I use AI 
-                to help make them a reality. While I have a good understanding of various 
-                programming languages, I focus more on creativity and efficiency rather 
-                than memorizing every detail. My goal is to produce results quickly 
-                without sacrificing quality.
-              </p>
-
-              <p className="text-lg">
-                I've worked on several projects that showcase my ability to turn ideas 
-                into real solutions. By relying on AI to handle the technical details, 
-                I can focus on the big picture and ensure that everything works smoothly.
+                Hi there, I'm Frank Calumay. I'm an IT student with hands-on experience from my internship 
+                at Allied Care Experts Medical Center Valenzuela, where I worked as IT Support and Data Encoder. 
+                During my internship, I handled technical troubleshooting, assisted with hardware and software issues, 
+                and managed data encoding tasks. This experience gave me practical skills in problem-solving and 
+                maintaining smooth operations in a professional healthcare environment.
               </p>
             </div>
           </div>
