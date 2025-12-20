@@ -64,12 +64,39 @@ const Contact = () => {
     if (!validateForm()) {
       return;
     }
+
+    // Check if EmailJS is configured
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      // Fallback to mailto if EmailJS is not configured
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      window.location.href = `mailto:fcalumay2021@gmail.com?subject=${subject}&body=${body}`;
+      setSubmitStatus({
+        submitted: true,
+        success: true,
+        message: 'Opening your email client. Please send the message from there.'
+      });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      return;
+    }
+
     try {
       await emailjs.sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         form.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        publicKey
       );
       setLastSubmission(now);
       setSubmitStatus({
@@ -84,11 +111,21 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Error:', error);
+      console.error('EmailJS Error:', error);
+      let errorMessage = 'Oops! Something went wrong. Please try again later.';
+      
+      if (error.text) {
+        if (error.text.includes('Invalid API key') || error.text.includes('invalid api')) {
+          errorMessage = 'Email service is not configured. Please contact me directly at fcalumay2021@gmail.com';
+        } else if (error.text.includes('Service ID')) {
+          errorMessage = 'Email service configuration error. Please contact me directly at fcalumay2021@gmail.com';
+        }
+      }
+      
       setSubmitStatus({
         submitted: true,
         success: false,
-        message: 'Oops! Something went wrong. Please try again later.'
+        message: errorMessage
       });
     }
   };
