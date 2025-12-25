@@ -59,7 +59,7 @@ const AboutMe = () => {
                 <div className="text-[#F2F4CB]">
                   <h4 className="text-xl font-semibold">Pamantasan ng Lungsod ng Valenzuela</h4>
                   <p className="text-gray-400">2022 - Present</p>
-                  <p className="text-gray-400 mt-1">Incoming 4th Year College</p>
+                  <p className="text-gray-400 mt-1">4th Year College</p>
                 </div>
               </div>
             </div>
