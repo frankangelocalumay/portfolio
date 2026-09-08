@@ -20,11 +20,7 @@ const AboutMe = () => {
             
             <div className="text-gray-400 space-y-6">
               <p className="text-lg">
-                Hi there, I'm Frank Calumay. I'm an IT student with hands-on experience from my internship 
-                at Allied Care Experts Medical Center Valenzuela, where I worked as IT Support and Data Encoder. 
-                During my internship, I handled technical troubleshooting, assisted with hardware and software issues, 
-                and managed data encoding tasks. This experience gave me practical skills in problem-solving and 
-                maintaining smooth operations in a professional healthcare environment.
+                Hi there, I'm Frank Calumay. I'm an Information Technology graduate with hands-on experience gained through my internship at Allied Care Experts Medical Center Valenzuela, where I worked in IT Support and Data Encoding. During my internship, I provided technical support, assisted with hardware and software troubleshooting, and handled data encoding and records-related tasks. This experience strengthened my problem-solving, attention to detail, and ability to maintain efficient operations in a professional healthcare environment.
               </p>
             </div>
           </div>

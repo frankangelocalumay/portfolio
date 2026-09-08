@@ -290,7 +290,7 @@ const App = () => {
                 <span className="text-[#F2F4CB]">Hi! I'm</span> <span className="text-[#F2F4CB] font-bold">Frank</span>
               </h1>
               <p className="text-gray-400 text-lg text-center mb-8">
-                IT student with internship experience in IT Support and Data Encoding
+                Information Technology Graduate with hands-on experience in IT Support and Data Encoding
               </p>
               
               {/* Social Links */}
