@@ -21,6 +21,8 @@ const AboutMe = () => {
             <div className="text-gray-400 space-y-6">
               <p className="text-lg">
                 Hi there, I'm Frank Calumay. I'm an Information Technology graduate with hands-on experience gained through my internship at Allied Care Experts Medical Center Valenzuela, where I worked in IT Support and Data Encoding. During my internship, I provided technical support, assisted with hardware and software troubleshooting, and handled data encoding and records-related tasks. This experience strengthened my problem-solving, attention to detail, and ability to maintain efficient operations in a professional healthcare environment.
+
+Outside of my IT experience, I also have hands-on experience in automotive lighting and headlight retrofitting. I work with LED lighting systems, wiring, installations, and basic electrical troubleshooting, which has further developed my technical skills, adaptability, and attention to detail.
               </p>
             </div>
           </div>

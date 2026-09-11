@@ -6,6 +6,35 @@ const Experience = () => {
 
   const experience = [
     {
+      company: "Next Stage Automotive Lights & Retrofit",
+      position: "Automotive Lighting Technician",
+      period: "January 2026 - Present",
+      description: "Assist with the installation and retrofitting of automotive headlights and lighting systems, including LED headlights, DRLs, projectors, and related accessories. Perform basic automotive electrical work, wiring, connections, and troubleshooting while following proper installation and safety procedures.",
+      activities: [
+        {
+          category: "Automotive Lighting & Retrofitting",
+          photos: [
+            {
+              src: process.env.PUBLIC_URL + "/images/experience/retrofit-exp1.jpg",
+              caption: "Assisting with automotive headlight retrofitting and lighting system installation"
+            },
+            {
+              src: process.env.PUBLIC_URL + "/images/experience/retrofit-exp2.jpg",
+              caption: "Testing and inspecting an installed automotive lighting setup"
+            }
+          ]
+        }
+      ],
+      technologies: [
+        "Headlight Retrofitting",
+        "LED / DRL Installation",
+        "Projector Installation",
+        "Basic Automotive Wiring",
+        "Electrical Troubleshooting",
+        "Hand Tools & Safety Equipment"
+      ]
+    },
+    {
       company: "Allied Care Experts Medical Center Valenzuela",
       position: "OJT / IT Intern",
       period: "July 2025 - December 2025",
