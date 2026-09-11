@@ -56,8 +56,8 @@ Outside of my IT experience, I also have hands-on experience in automotive light
                 </div>
                 <div className="text-[#F2F4CB]">
                   <h4 className="text-xl font-semibold">Pamantasan ng Lungsod ng Valenzuela</h4>
-                  <p className="text-gray-400">2022 - Present</p>
-                  <p className="text-gray-400 mt-1">4th Year College</p>
+                  <p className="text-gray-400">2022 - 2026</p>
+                  <p className="text-gray-400 mt-1">Bachelor of Science in Information Technology</p>
                 </div>
               </div>
             </div>
