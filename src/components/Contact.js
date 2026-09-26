@@ -9,7 +9,8 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    website: ''
   });
 
   const [submitStatus, setSubmitStatus] = useState({
@@ -65,6 +66,43 @@ const Contact = () => {
       return;
     }
 
+    const contactApiUrl = process.env.REACT_APP_CONTACT_API_URL;
+    if (contactApiUrl) {
+      try {
+        const response = await fetch(contactApiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Unable to send your message.');
+        }
+
+        setLastSubmission(now);
+        setSubmitStatus({
+          submitted: true,
+          success: true,
+          message: 'Thank you for your message! I will get back to you soon.'
+        });
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          website: ''
+        });
+      } catch (error) {
+        setSubmitStatus({
+          submitted: true,
+          success: false,
+          message: error.message
+        });
+      }
+      return;
+    }
+
     // Check if EmailJS is configured
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -86,7 +124,8 @@ const Contact = () => {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
+        website: ''
       });
       return;
     }
@@ -108,7 +147,8 @@ const Contact = () => {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
+        website: ''
       });
     } catch (error) {
       console.error('EmailJS Error:', error);
@@ -117,6 +157,8 @@ const Contact = () => {
       if (error.text) {
         if (error.text.includes('Invalid API key') || error.text.includes('invalid api')) {
           errorMessage = 'Email service is not configured. Please contact me directly at fcalumay2021@gmail.com';
+        } else if (error.text.includes('Gmail_API') || error.text.includes('insufficient authentication scopes')) {
+          errorMessage = 'The Gmail connection needs to be authorized again. Please contact me directly at fcalumay2021@gmail.com';
         } else if (error.text.includes('Service ID')) {
           errorMessage = 'Email service configuration error. Please contact me directly at fcalumay2021@gmail.com';
         }
@@ -158,6 +200,17 @@ const Contact = () => {
             className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20"
           >
             <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
               {/* Name Input */}
               <div>
                 <label htmlFor="name" className="block text-[#F2F4CB] mb-2">Name</label>

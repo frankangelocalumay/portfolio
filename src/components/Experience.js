@@ -8,7 +8,7 @@ const Experience = () => {
     {
       company: "Next Stage Automotive Lights & Retrofit",
       position: "Automotive Lighting Technician",
-      period: "January 2026 - Present",
+      period: "January 2026 - September 2026",
       description: "Assist with the installation and retrofitting of automotive headlights and lighting systems, including LED headlights, DRLs, projectors, and related accessories. Perform basic automotive electrical work, wiring, connections, and troubleshooting while following proper installation and safety procedures.",
       activities: [
         {
@@ -50,19 +50,6 @@ const Experience = () => {
             { 
               src: process.env.PUBLIC_URL + "/images/experience/it-support-2.jpg", 
               caption: "Responding to department requests for printer repair, ink refill, and basic PC troubleshooting" 
-            }
-          ]
-        },
-        {
-          category: "Data Encoding & System Verification",
-          photos: [
-            { 
-              src: process.env.PUBLIC_URL + "/images/experience/data-encoding-1.jpg", 
-              caption: "Verifying PhilHealth claims and encoding records using PhilHealth Information System and spreadsheets" 
-            },
-            { 
-              src: process.env.PUBLIC_URL + "/images/experience/data-encoding-2.jpg", 
-              caption: "Manual encoding of PhilHealth data when records are missing from the system database" 
             }
           ]
         },
